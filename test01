@@ -1,0 +1,30 @@
+import java.util.Arrays;
+import java.util.Random;
+
+public class 亂數 {
+
+        public static void main(String[] args) {
+            Random rrr = new Random();
+            int[] sixNum = new int[3];
+
+            for (int i=0; i<3; i++){
+                sixNum[i] = rrr.nextInt(99)+1;
+                for (int j=0; j<i;){
+                    if (sixNum[j]==sixNum[i]){
+                        sixNum[i] = rrr.nextInt(99)+1;
+                        j=0;
+                    }
+                    else j++;
+                }
+            }
+            System.out.println("亂數: ");
+
+            for (int i=0; i<3; i++)
+                System.out.print(sixNum[i]+",");
+
+
+        }
+
+    }
+
+
